@@ -1,0 +1,19 @@
+17-60      loop   idle0
+84-141     noloop idle1
+150-190    loop   run
+202-245    noloop attack0
+259-295    noloop attack1
+317-347    noloop skill0
+352-369    noloop wound
+377-404    noloop death
+
+
+
+
+
+
+
+
+
+
+
