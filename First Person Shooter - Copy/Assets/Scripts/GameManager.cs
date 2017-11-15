@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private SpawnManager _spawnManager;
     private ScoreManager _scoreManager;
     private SaveManager _saveManager;
+    private Camera _camera;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
         _spawnManager = GetComponentInChildren<SpawnManager>();
         _scoreManager = GetComponent<ScoreManager>();
         _saveManager = GetComponent<SaveManager>();
+        _camera = Camera.main;
     }
 
     public void GameOver()
@@ -39,20 +41,20 @@ public class GameManager : MonoBehaviour
 
     private void ShowPanel(GameObject panel, bool didWin)
     {
-        panel.GetComponent<Animator>().SetBool("IsGameOver", true);
-        panel.GetComponent<GameOverUIManager>().SetHighScoreText(ScoreManager.GetScoreFormatting(_saveManager.LoadHighScore()), didWin);
+        Vector3 frontOfPlayer = _camera.transform.position + _camera.transform.forward * 3;
+        Quaternion playerRotation = _camera.transform.rotation;
+        GameObject newPanel = Instantiate(panel, frontOfPlayer, playerRotation);
+        newPanel.GetComponent<Animator>().SetBool("IsGameOver", true);
+        newPanel.GetComponent<GameOverUIManager>().SetHighScoreText(ScoreManager.GetScoreFormatting(_saveManager.LoadHighScore()), didWin);
     }
 
     private void DisableGame()
     {
-        _player.GetComponent<PlayerController>().enabled = false;
-        _player.GetComponentInChildren<MouseCameraContoller>().enabled = false;
 
         PlayerShootingController shootingController = _player.GetComponentInChildren<PlayerShootingController>();
         shootingController.GameOver();
         shootingController.enabled = false;
 
-        Cursor.lockState = CursorLockMode.None;
         _scoreManager.GameOver();
     }
 }

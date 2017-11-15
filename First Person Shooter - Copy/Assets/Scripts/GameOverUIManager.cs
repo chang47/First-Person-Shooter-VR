@@ -7,11 +7,12 @@ public class GameOverUIManager : MonoBehaviour
     private Button _button;
     private Text _text;
 
-	void Start () {
+	void Awake () {
         _button = GetComponentInChildren<Button>();
         _button.onClick.AddListener(ClickPlayAgain);
 
 	    _text = GetComponentInChildren<Text>();
+        print("text in awake: " + _text.text);
 	}
 
     public void ClickPlayAgain()
@@ -21,7 +22,7 @@ public class GameOverUIManager : MonoBehaviour
 
     public void SetHighScoreText(string score, bool didWin)
     {
-        print(_text.text);
+        print("before text: " + _text.text);
         if (didWin)
         {
             _text.text = "You Win! \n" +
@@ -32,6 +33,6 @@ public class GameOverUIManager : MonoBehaviour
             _text.text = "Game Over! \n" +
                          "High Score: " + score;
         }
-        print(_text.text);
+        print("after text: " + _text.text);
     }
 }

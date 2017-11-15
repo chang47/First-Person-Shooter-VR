@@ -23,9 +23,9 @@ public class PlayerHealth : MonoBehaviour
         if (!first)
         {
             first = !first;
-            GameObject gameobject = Instantiate(test, transform.position + transform.forward * 3, transform.rotation);
-            Animator animator = gameobject.GetComponent<Animator>();
-            animator.SetBool("IsGameOver", true);
+            //GameObject gameobject = Instantiate(test, transform.position + transform.forward * 3, transform.rotation);
+            //Animator animator = gameobject.GetComponent<Animator>();
+            //animator.SetBool("IsGameOver", true);
         }
     }
 
