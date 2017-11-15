@@ -5,6 +5,12 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 
+/FPSVR/[Ll]ibrary/
+/FPSVR/[Tt]emp/
+/FPSVR/[Oo]bj/
+/FPSVR/[Bb]uild/
+/FPSVR/[Bb]uilds/
+/FPSVR/Assets/AssetStoreTools*
 # Visual Studio 2015 cache directory
 /.vs/
 
