@@ -12,7 +12,7 @@ public class PlayerShootingController : MonoBehaviour
     private ParticleSystem _particle;
     private LayerMask _shootableMask;
     private float _timer;
-    private AudioSource _audioSource;
+    private GvrAudioSource _audioSource;
     private Animator _animator;
     private bool _isShooting;
 
@@ -82,7 +82,7 @@ public class PlayerShootingController : MonoBehaviour
 
     private void SetupSound()
     {
-        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource = gameObject.AddComponent<GvrAudioSource>();
         _audioSource.volume = 0.2f;
         _audioSource.clip = ShotSfxClips;
     }

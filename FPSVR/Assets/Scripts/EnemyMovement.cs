@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent _nav;
     private Transform _player;
     private EnemyHealth _enemyHealth;
-    private AudioSource _walkingAudioSource;
+    private GvrAudioSource _walkingAudioSource;
     private Animator _animator;
     private float _time;
 
@@ -44,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void SetupSound()
     {
-        _walkingAudioSource = gameObject.AddComponent<AudioSource>();
+        _walkingAudioSource = gameObject.AddComponent<GvrAudioSource>();
         _walkingAudioSource.volume = 0.2f;
     }
 

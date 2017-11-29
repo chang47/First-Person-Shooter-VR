@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour
 
     private SpawnManager _spawnManager;
     private Animator _animator;
-    private AudioSource _audioSource;
+    private GvrAudioSource _audioSource;
     private float _hitTime;
     private Boolean _isEnter;
 
@@ -55,7 +55,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void SetupSound()
     {
-        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource = gameObject.AddComponent<GvrAudioSource>();
         _audioSource.volume = 0.2f;
     }
 

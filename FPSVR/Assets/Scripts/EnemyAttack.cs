@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class EnemyAttack : MonoBehaviour
 {
     public FistCollider LeftFist;
@@ -9,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
 
     private Animator _animator;
     private GameObject _player;
-    private AudioSource _audioSource;
+    private GvrAudioSource _audioSource;
 
     void Awake()
     {
@@ -49,7 +48,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void SetupSound()
     {
-        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource = gameObject.AddComponent<GvrAudioSource>();
         _audioSource.volume = 0.2f;
     }
 

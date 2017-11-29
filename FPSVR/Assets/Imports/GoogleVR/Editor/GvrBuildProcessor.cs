@@ -70,12 +70,12 @@ class GvrBuildProcessor : IPreprocessBuild {
 
   // 'Player Settings > Virtual Reality SDKs' includes 'Daydream'?
   private bool IsDaydreamSDKIncluded() {
-    return VRSettings.supportedDevices.Contains(GvrSettings.VR_SDK_DAYDREAM);
+    return UnityEngine.XR.XRSettings.supportedDevices.Contains(GvrSettings.VR_SDK_DAYDREAM);
   }
 
   // 'Player Settings > Virtual Reality SDKs' includes 'Cardboard'?
   private bool IsCardboardSDKIncluded() {
-    return VRSettings.supportedDevices.Contains(GvrSettings.VR_SDK_CARDBOARD);
+    return UnityEngine.XR.XRSettings.supportedDevices.Contains(GvrSettings.VR_SDK_CARDBOARD);
   }
 }
 #endif  // UNITY_ANDROID || UNITY_IOS
